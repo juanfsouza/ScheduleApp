@@ -3,7 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tsx watch src/server.ts",
+    "build": "tsup src --out-dir dist",
+    "start": "node dist/server.js",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio",
+    "db:seed": "tsx src/infrastructure/database/seed.ts",
+    "test": "vitest",
+    "lint": "eslint src --ext .ts,.tsx",
+    "format": "prettier --write src"
   },
   "keywords": [],
   "author": "",
